@@ -3,37 +3,51 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title</title>
     @Scripts.Render("~/bundles/modernizr")
 
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Resources/plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Resources/plugins/themefisher-fonts/themefisher-fonts.css">
+    <link rel="stylesheet" href="~/Resources/plugins/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="~/Resources/plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="~/Resources/css/style.css">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <header>
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <a class="navbar-brand" href="#">DBM</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto text-center text-lg-left">
+                        <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link", hidefocus = "hidefocus" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link", hidefocus = "hidefocus" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link", hidefocus = "hidefocus" })
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </div>
+    </header>
     <div class="container body-content">
-        @RenderBody()
+        <div class="body-content-body">
+            @RenderBody()
+        </div>
+
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Digital Board Marker: Storage Efficient System for Class Lectures</p>
         </footer>
     </div>
 
